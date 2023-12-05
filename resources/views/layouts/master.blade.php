@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
+    <title>
+        
+        @yield("page__title", "Novaforge")
+    </title>
+</head>
+<body class="scroll-smooth m-0 p-4 grid grid-cols-1 grid-rows-[100px, auto] gap-y-1 font-sans bg-whiteSmoke">
+    <!-- Header -->
+    <h1
+        class="font-sans text-xl font-bold tracking-widest text-darkBlue md:text-2xl"
+    >
+        NovaForge
+    </h1>
+
+    <main>
+        <!-- Body of website-->
+        @yield('body__content')
+    </main>
+    
+</body>
+</html>
