@@ -26,6 +26,7 @@ module.exports = {
       colors: {
         whiteSmoke: 'hsl(0, 0%, 96%)',
         darkBlue: 'hsl(209, 99%, 27%)',
+        lightBlue: 'hsl(218, 73%, 53%)',
         lightBlack: 'hsl(0, 1%, 30%)',
         
 

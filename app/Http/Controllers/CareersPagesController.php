@@ -10,4 +10,8 @@ class CareersPagesController extends Controller
         
         return view('careers');
     }
+
+    public function getJobBoard (){
+        return view('jobBoard');
+    }
 }
