@@ -42,9 +42,19 @@
                             Apply now
                         </a>
                     </div>
-                    
+                </div>
+
+                <!-- Company Information -->
+                <div
+                    class="mt-5 text-xxs font-mono font-medium
+                        tracking-wide md:text-sm">
+                    <span>Want to learn about us?</span>
+                    <a href=""
+                        class="text-sky-800">
+                        Click here.</a>
                 
                 </div>
+
             </div>
             
         </div>
