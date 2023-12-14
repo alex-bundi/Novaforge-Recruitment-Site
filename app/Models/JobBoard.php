@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class JobBoard extends Model
 {
-    use HasFactory;
+    protected $table = 'jobslist'; // The table associated with the model
+    
 }

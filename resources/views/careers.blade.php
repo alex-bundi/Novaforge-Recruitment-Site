@@ -16,7 +16,7 @@
             <div class="flex flex-col md:basis-3/4">
                 <div>
                     <h1
-                    class="py-2 font-mono text-2xl font-extrabold tracking-wider
+                        class="py-2 font-mono text-2xl font-extrabold tracking-wider
                         md:text-xl"
                     >
                     Join Novaforge: Empowering Innovators, Fuelling Futures
