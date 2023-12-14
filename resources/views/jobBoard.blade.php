@@ -28,19 +28,23 @@
     <!-- Search Function -->
     <section>
         
-            <form id="job_search_form" action="" method="GET" class="flex py-6 items-center space-x-2">
+            <form id="job_search_form" 
+                action="{{ route('search_all_jobs') }}" 
+                method="GET" 
+                class="flex pt-6 items-center space-x-2">
                 @csrf
                 <div>
-                    <label for="search_jobs"></label>
+                    <label for=""></label>
                     <input
                         id="search_jobs"
-                        name="search_jobs"
+                        name=""
                         type="text" 
                         placeholder="Search..."
                         class="bg-gray-200 p-2 w-full rounded-md border border-slate-300
                             focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500
                             font-mono text-base">
                 </div>
+                
                 <!--Search button-->
                 <button type="submit"
                     class=" p-2 rounded-lg bg-darkBlue text-white font-mono font-medium
@@ -50,9 +54,12 @@
                         </svg>
 
                 </button>
-                
-            
             </form>
+            <p 
+                id='error_message'
+                style="visibility: hidden;"
+                class="pl-2 m-0 font-mono font-semibold text-xxs tracking-wide"
+                >Error message</p>
         
         
         

@@ -17,3 +17,5 @@ use App\Http\Controllers\CareersPagesController;
 // explicit routes
 Route::get('careers', [CareersPagesController::class, 'getIndex'])->name('careers__homepage');
 Route::get('jobboard', [CareersPagesController::class, 'getJobBoard'])->name('available__jobs');
+
+Route::get('jobboard/searchquery', [App\Http\Controllers\JobBoardController::class, 'getSearchQuery'])->name('search_all_jobs');
