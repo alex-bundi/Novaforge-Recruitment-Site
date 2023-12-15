@@ -12,10 +12,10 @@ function getSearchParameter () {
         if (searchInput === null || searchquery === ''){
             error("Please type something to search...");
         } else {
-            new XHR
+            
 
-            // jobSearchForm.submit();
-            // return searchquery;
+            jobSearchForm.submit();
+            return searchquery;
         }
 
     });
