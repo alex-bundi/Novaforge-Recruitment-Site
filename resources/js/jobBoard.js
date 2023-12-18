@@ -1,9 +1,9 @@
-getSearchParameter();
+const jobSearchForm = document.getElementById('job_search_form');
+getSearchParameter ();
+
 
 function getSearchParameter () {
-    const jobSearchForm = document.getElementById('job_search_form');
-
-    jobSearchForm.addEventListener("submit", (event) => {
+        jobSearchForm.addEventListener("submit", (event) => {
         event.preventDefault(); // prevents form submission
         
         let searchInput = document.getElementById('search_jobs');
@@ -12,13 +12,16 @@ function getSearchParameter () {
         if (searchInput === null || searchquery === ''){
             error("Please type something to search...");
         } else {
+            $.ajax ({
+                url: '/jobboard',
+                type: 'GET',
+                dataType: 'json',
             
+            });
 
-            jobSearchForm.submit();
-            return searchquery;
         }
-
     });
+
 }
 
 function error (message){
@@ -28,6 +31,7 @@ function error (message){
     errorMessageElement.style.color = "red";
 }
 
-function success (){
-
-}
+// function sendData (){
+    
+//     console.log(searchQueryValue);
+// }

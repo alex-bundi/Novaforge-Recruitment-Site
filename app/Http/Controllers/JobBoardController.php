@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class JobBoardController extends Controller
 {
-    public function getSearchQuery () {
-        echo("hello");
+    public function getSearchQuery (Request $request ) {
+        $searchQuery = $request->input('searchquery');
+
     }
 }

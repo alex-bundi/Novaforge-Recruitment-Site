@@ -34,10 +34,10 @@
                 class="flex pt-6 items-center space-x-2">
                 @csrf
                 <div>
-                    <label for=""></label>
+                    <label for="jobs_search"></label>
                     <input
                         id="search_jobs"
-                        name=""
+                        name="jobs_search"
                         type="text" 
                         placeholder="Search..."
                         class="bg-gray-200 p-2 w-full rounded-md border border-slate-300
