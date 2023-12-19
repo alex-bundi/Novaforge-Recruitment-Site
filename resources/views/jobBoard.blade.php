@@ -40,6 +40,7 @@
                         name="jobs_search"
                         type="text" 
                         placeholder="Search..."
+                        value="{{ old('jobs_search') }}"
                         class="bg-gray-200 p-2 w-full rounded-md border border-slate-300
                             focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500
                             font-mono text-base">
@@ -54,15 +55,24 @@
                         </svg>
 
                 </button>
+                
             </form>
+            @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <p
+                            class="pl-2 m-0 font-mono font-semibold text-red-500 text-xxs tracking-wide"
+                        >{{ $error }}</p>
+                    @endforeach
+            @endif
             <p 
                 id='error_message'
                 style="visibility: hidden;"
-                class="pl-2 m-0 font-mono font-semibold text-xxs tracking-wide"
+                class="pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide"
                 >Error message</p>
-        
-        
-        
+            
+            
+            <p>{{ $jobNotFoundMessage }}</p>
+
     </section>
 
 @stop

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CareersPagesController;
+use App\Http\Controllers\JobBoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,4 @@ use App\Http\Controllers\CareersPagesController;
 Route::get('careers', [CareersPagesController::class, 'getIndex'])->name('careers__homepage');
 Route::get('jobboard', [CareersPagesController::class, 'getJobBoard'])->name('available__jobs');
 
-Route::get('jobboard/searchquery', [App\Http\Controllers\JobBoardController::class, 'getSearchQuery'])->name('search_all_jobs');
+Route::get('jobboard/searchquery', [JobBoardController::class, 'getSearchQuery'])->name('search_all_jobs');

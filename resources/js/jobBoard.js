@@ -24,8 +24,7 @@ function getSearchParameter() {
             })
             .then(response => {
                 // Handle the response if needed
-                console.log(response);
-                jobSearchForm.submit();
+                
             })
             .catch(error => {
                 console.error('Error:', error);
