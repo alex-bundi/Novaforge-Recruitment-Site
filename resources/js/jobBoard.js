@@ -19,12 +19,10 @@ function getSearchParameter() {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    // Add headers if needed
                 },
             })
             .then(response => {
-                // Handle the response if needed
-                
+                console.log(response);
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -40,8 +38,3 @@ function error (message){
     errorMessageElement.style.visibility = "visible";
     errorMessageElement.style.color = "red";
 }
-
-// function sendData (){
-    
-//     console.log(searchQueryValue);
-// }

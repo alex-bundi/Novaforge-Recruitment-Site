@@ -69,10 +69,9 @@
                 style="visibility: hidden;"
                 class="pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide"
                 >Error message</p>
+      
             
-            
-            <p>{{ $jobNotFoundMessage }}</p>
 
     </section>
-
+    <p>{{ $notFoundMessage }}</p>
 @stop

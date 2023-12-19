@@ -17,9 +17,8 @@ class JobBoardController extends Controller
         $query = JobBoard::where('job_title', $searchQuery)->get();
         
         if ($query->isEmpty()){
-            $jobNotFoundMessage = 'The search did not yield any results for that specific job.';
-            
-            return view('jobBoard', ['jobNotFoundMessage' => $jobNotFoundMessage]);
+            $notFoundMessage = 'The search did not yield any results for that specific job.';
+            return view('jobBoard', compact('$notFoundMessage'));
                               
         }else {
             // Data to be displayed in the view
@@ -42,10 +41,9 @@ class JobBoardController extends Controller
                     $job_details['positions'] = $values->positions;
                     $job_details['job_reference_code'] = $values->job_reference_code;
                     $job_details['posted_date'] = $values->posted_date;
-                    // echo($values->job_reference_code);
                 }
             }
-            return view('jobBoard', compact('job_details'));
+            // return view('jobBoard', compact('job_details'));
         }
     }
 }
