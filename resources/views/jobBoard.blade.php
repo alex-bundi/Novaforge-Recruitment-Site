@@ -73,5 +73,4 @@
             
 
     </section>
-    <p>{{ $notFoundMessage }}</p>
 @stop
