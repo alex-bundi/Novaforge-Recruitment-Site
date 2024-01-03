@@ -28,9 +28,7 @@
     <!-- Search Function -->
     <section>
         
-            <form id="job_search_form" 
-                action="{{ route('search_all_jobs') }}" 
-                method="GET" 
+            <form id="job_search_form"                 
                 class="flex pt-6 items-center space-x-2">
                 @csrf
                 <div>
@@ -40,7 +38,7 @@
                         name="jobs_search"
                         type="text" 
                         placeholder="Search..."
-                        value="{{ old('jobs_search') }}"
+                       
                         class="bg-gray-200 p-2 w-full rounded-md border border-slate-300
                             focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500
                             font-mono text-base">
