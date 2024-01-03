@@ -22,8 +22,21 @@ class JobBoard {
                         searchInput:searchInput
                     })
                 })
-                .then(function(res){
-                    console.log(res.json())
+                .then(async (res) => {
+                    let data = await res.json(); // Suspend execution until the returned promise is fulfilled or rejected.
+                    let message = data.message;
+                    if (typeof(message) === 'string'){
+                        const notFound = document.getElementById('not_found');
+                        notFound.classList.remove('invisible');
+                        const paragraph = notFound.querySelector('p'); // Select the <p> element within #not_found
+                        
+                        paragraph.textContent = message; 
+                        setTimeout(() => notFound.remove(), 3000); // Remove warning after 3 secs
+                        
+                    }else if(message instanceof Object == true) { // check the type of an object
+                        console.log('hello world');
+                    }
+                    
                 })
                 
                 .catch(error => {

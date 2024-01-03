@@ -39,7 +39,7 @@
                         type="text" 
                         placeholder="Search..."
                        
-                        class="bg-gray-200 p-2 w-full rounded-md border border-slate-300
+                        class="bg-gray-200 m-0 p-2 w-full rounded-md border border-slate-300
                             focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500
                             font-mono text-base">
                 </div>
@@ -67,8 +67,19 @@
                 style="visibility: hidden;"
                 class="pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide"
                 >Error message</p>
+
+            {{-- If search value equals to none --}}
+            <div id="not_found"
+                class="invisible flex space-x-1 ml-2 pl-2 pt-0 text-red-400
+                    font-mono text-xxs font-bold tracking-wide md:text-sm"
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+
+                <p>The search did not yield any results for that specific job.</p>
+            </div>
       
-            
 
     </section>
 @stop
