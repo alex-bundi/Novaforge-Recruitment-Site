@@ -77,9 +77,53 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
 
-                <p>The search did not yield any results for that specific job.</p>
+                <p></p>
             </div>
-      
+    </section>
 
+    {{-- All Available job posts --}}
+    <section>
+        <div>
+            <p class="font-mono text-base font-extrabold tracking-wide mb-3
+                md:text-xl">
+                Available Jobs
+            </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-y-2 md:space-x-4">
+            {{-- Job info container --}}
+            <ul>
+                <li>
+                    <div class="flex p-2 rounded-md border-2 border-slate-200 md:basis-2/4">
+                        {{-- Company logo --}}
+                        <div class="bg-gray-400 rounded-lg">
+                            <p class="p-1">N</p>
+                        </div>
+                        <div class="flex flex-col">
+                            {{-- Job Title --}}
+                            <h1 class="pl-3 font-sans text-base font-bold 
+                                tracking-wide text-darkBlue md:text-xl">
+                                Software Engineer 
+                            </h1>
+                            <div class="flex pl-3 space-x-1">
+                                {{-- Salary --}}
+                                <div class="font-sans text-sm font-semibold 
+                                    tracking-wide text-black/75 md:text-base">
+                                    <h3>$8K</h3>
+                                </div>
+                                {{-- Location --}}
+                                <div class="font-sans text-sm font-semibold 
+                                    text-black/50 tracking-wide md:text-base">
+                                    <P>Nairobi, Kenya</P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            
+            </ul>
+            
+
+        </div>
     </section>
 @stop

@@ -34,7 +34,7 @@ class JobBoard {
                         setTimeout(() => notFound.remove(), 3000); // Remove warning after 3 secs
                         
                     }else if(message instanceof Object == true) { // check the type of an object
-                        console.log('hello world');
+                        console.log(message);
                     }
                     
                 })
@@ -47,7 +47,6 @@ class JobBoard {
         })
         
     }
-
     // Display error message
     error (message){
         this.message = message;
@@ -57,8 +56,57 @@ class JobBoard {
         errorMessageElement.style.color = "red";
     }
 
+    // Gets all the availabke jobs sent from the controller
+    getAvailableCareers (){
+        let url = 'http://127.0.0.1:8000/jobboard/availablejobs';
+        fetch(url)
+        .then(async (res) => {
+            let jobsData = await res.json(); // Suspend execution until the returned promise is fulfilled or rejected.
+            let message = jobsData.message;
+            console.log(message);
+
+           
+
+            for (let key in message){
+                console.log(message[key].job_title)
+
+                let innerHtml = `
+                    <div class="flex p-2 rounded-md border-2 border-slate-200 md:basis-2/4">
+                        {{-- Company logo --}}
+                        <div class="bg-gray-400 rounded-lg">
+                            <p class="p-1">N</p>
+                        </div>
+                        <div class="flex flex-col">
+                            {{-- Job Title --}}
+                            <h1 class="pl-3 font-sans text-base font-bold 
+                                tracking-wide text-darkBlue md:text-xl">
+                                ${message[key].job_title} 
+                            </h1>
+                            <div class="flex pl-3 space-x-1">
+                                {{-- Salary --}}
+                                <div class="font-sans text-sm font-semibold 
+                                    tracking-wide text-black/75 md:text-base">
+                                    <h3>$8K</h3>
+                                </div>
+                                {{-- Location --}}
+                                <div class="font-sans text-sm font-semibold 
+                                    text-black/50 tracking-wide md:text-base">
+                                    <P>Nairobi, Kenya</P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+
+                // for (let innerKeys in message[key]){
+                //     console.log(message[key].job_title)
+                // }
+            }
+            
+        })
+    }
 
 }
 
 let jobList = new JobBoard();
 jobList.getSearchParameter();
+jobList.getAvailableCareers();

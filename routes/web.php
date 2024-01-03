@@ -19,3 +19,4 @@ Route::get('careers', [CareersPagesController::class, 'getIndex'])->name('career
 Route::get('jobboard', [CareersPagesController::class, 'getJobBoard'])->name('available__jobs');
 
 Route::post('jobboard/searchquery', [JobBoardController::class, 'getSearchQuery'])->name('search_all_jobs');
+Route::get('jobboard/availablejobs', [JobBoardController::class, 'getAvailableJobs']);
