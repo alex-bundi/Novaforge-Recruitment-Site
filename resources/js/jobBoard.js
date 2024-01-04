@@ -16,14 +16,50 @@ class JobBoard {
                 
                 jobDetails.forEach((job) => this.jobList.push(job));
             }else{
-                throw new Error('SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it')
+                throw new Error('SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it');
             }
         })
         .catch((error) => console.log(error))
 
-        console.log(this.jobList);
+    }
+
+    availableJobs () {
+        let submitSearch = false;
+        const jobSearchForm = document.getElementById('job_search_form');
+
+        jobSearchForm.addEventListener('submit', (event) => {
+            submitSearch = true;
+
+            if (submitSearch == true) {
+                event.preventDefault();
+                this.searchForParameter()
+            } else {
+                console.log('button not clicked');
+            }
+        });
     }
     
+    searchForParameter () {
+        const jobSearchForm = document.getElementById('job_search_form');
+        jobSearchForm.addEventListener('submit', (event) => {
+            let searchInput = document.getElementById('search_jobs').value.trim(); // Clean Input value
+            
+            if (searchInput == null || searchInput.length === 0){
+                console.log(searchInput);
+                // this.error("Please type something to search...");
+            }
+        });
+    }
+
+    // Display error message
+    error (message){
+        this.message = message;
+        const errorMessageElement = document.getElementById('error_message');
+        errorMessageElement.textContent = this.message;
+        errorMessageElement.style.visibility = "visible";
+        errorMessageElement.style.color = "red";
+    }
+
     // getSearchParameter() {
     //     const jobSearchForm = document.getElementById('job_search_form');
 
@@ -133,4 +169,4 @@ class JobBoard {
 }
 
 let careersList = new JobBoard();
-careersList.getAvailableJobs();
+careersList.availableJobs();
