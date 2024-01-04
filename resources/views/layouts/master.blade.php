@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     @vite('resources/js/index.js')
-    @vite('resources/js/jobBoard.js')
     <title>
         
         @yield("page__title", "Novaforge")

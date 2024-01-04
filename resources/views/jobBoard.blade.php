@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@vite('resources/js/jobBoard.js')
 <!-- Page title -->
 @section("page__title", 'Job Board')
 <!-- Body of website-->
