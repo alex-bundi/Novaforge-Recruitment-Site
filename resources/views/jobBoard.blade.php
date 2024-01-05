@@ -54,20 +54,15 @@
                         </svg>
 
                 </button>
-                
+                <p 
+                    id='error_message'
+                    style="visibility: hidden;"
+                    class="pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide"
+                    >Error message
+                </p>
             </form>
-            @if ($errors->any())
-                    @foreach ($errors->all() as $error)
-                        <p
-                            class="pl-2 m-0 font-mono font-semibold text-red-500 text-xxs tracking-wide"
-                        >{{ $error }}</p>
-                    @endforeach
-            @endif
-            <p 
-                id='error_message'
-                style="visibility: hidden;"
-                class="pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide"
-                >Error message</p>
+         
+           
 
             {{-- If search value equals to none --}}
             <div id="not_found"
@@ -81,6 +76,7 @@
                 <p></p>
             </div>
 
+            {{-- If search value exists --}}
             <div id="found_search_value">
             
             </div>
@@ -98,36 +94,38 @@
         <div class="flex flex-col md:flex-row gap-y-2 md:space-x-4">
             {{-- Job info container --}}
             <ul>
-                <li>
-                    <div class="flex p-2 rounded-md border-2 border-slate-200 md:basis-2/4">
-                        {{-- Company logo --}}
+                <li class="">
+                    {{-- <div class="flex grow p-2 rounded-md border-2 border-slate-200 md:basis-1/2">
+                        Company logo
                         <div class="bg-gray-400 rounded-lg">
                             <p class="p-1">N</p>
                         </div>
                         <div class="flex flex-col">
-                            {{-- Job Title --}}
+                            Job Title
                             <h1 class="pl-3 font-sans text-base font-bold 
-                                tracking-wide text-darkBlue md:text-xl">
+                                tracking-wide text-darkBlue md:text-base">
                                 Software Engineer 
                             </h1>
                             <div class="flex pl-3 space-x-1">
-                                {{-- Salary --}}
+                                Salary
                                 <div class="font-sans text-sm font-semibold 
                                     tracking-wide text-black/75 md:text-base">
                                     <h3>$8K</h3>
                                 </div>
-                                {{-- Location --}}
+                                Location
                                 <div class="font-sans text-sm font-semibold 
                                     text-black/50 tracking-wide md:text-base">
                                     <P>Nairobi, Kenya</P>
                                 </div>
                             </div>
                         </div>
+                    </div> --}}
+                    {{-- If search value exists --}}
+                    <div id="all__jobs__list" class="">
+                    
                     </div>
                 </li>
-            
             </ul>
-            
 
         </div>
     </section>
