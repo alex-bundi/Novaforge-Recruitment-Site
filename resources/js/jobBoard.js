@@ -5,8 +5,8 @@ class JobBoard {
 
     }
 
+    // Get data from JobBoardController and append to an array
     getAvailableJobs (){
-        // Get data from JobBoardController and append to an array
         fetch(this.url)
         .then(async (res) => {
             if(res.ok){
@@ -15,6 +15,7 @@ class JobBoard {
                 let jobDetails = Object.values(message);
                 
                 jobDetails.forEach((job) => this.jobList.push(job));
+                return this.jobList;
             }else{
                 throw new Error('SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it');
             }
@@ -25,28 +26,43 @@ class JobBoard {
 
     availableJobs () {
         let submitSearch = false;
-        const jobSearchForm = document.getElementById('job_search_form');
+        const jobSearchBtn = document.getElementById('search_button');
+        
 
-        jobSearchForm.addEventListener('submit', (event) => {
+        jobSearchBtn.addEventListener('click', () => {
             submitSearch = true;
-
             if (submitSearch == true) {
-                event.preventDefault();
-                this.searchForParameter()
-            } else {
-                console.log('button not clicked');
+                this.searchForParameter();
             }
         });
+        console.log('get job list');
     }
     
+    // Search for value in records
     searchForParameter () {
         const jobSearchForm = document.getElementById('job_search_form');
         jobSearchForm.addEventListener('submit', (event) => {
+            event.preventDefault();
             let searchInput = document.getElementById('search_jobs').value.trim(); // Clean Input value
-            
             if (searchInput == null || searchInput.length === 0){
-                console.log(searchInput);
-                // this.error("Please type something to search...");
+                this.error('Please fill in the field to search for value...');
+            }else {
+                // console.log(this.jobList);
+                let value = this.jobList.find(query => query.job_title === searchInput);
+
+                if (typeof value == 'undefined') {
+                    const message = 'Search value not found.';
+                    const notFound = document.getElementById('not_found');
+                    if (notFound.classList.contains('invisible')) {
+                        notFound.classList.remove('invisible');
+                      }                    
+                    const paragraph = notFound.querySelector('p'); // Select the <p> element within #not_found
+                    
+                    paragraph.textContent = message; 
+                    setTimeout(() => notFound.remove(), 7000); // Remove warning after 3 secs
+                }else {
+                    console.log(value)
+                }
             }
         });
     }
@@ -58,6 +74,7 @@ class JobBoard {
         errorMessageElement.textContent = this.message;
         errorMessageElement.style.visibility = "visible";
         errorMessageElement.style.color = "red";
+        setTimeout(() => errorMessageElement.remove(), 5000); // Remove warning after 3 secs
     }
 
     // getSearchParameter() {
@@ -169,4 +186,5 @@ class JobBoard {
 }
 
 let careersList = new JobBoard();
+careersList.getAvailableJobs();
 careersList.availableJobs();

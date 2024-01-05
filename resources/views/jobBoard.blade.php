@@ -46,6 +46,7 @@
                 
                 <!--Search button-->
                 <button type="submit"
+                    id="search_button"
                     class=" p-2 rounded-lg bg-darkBlue text-white font-mono font-medium
                                 tracking-wide hover:bg-lightBlue">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
