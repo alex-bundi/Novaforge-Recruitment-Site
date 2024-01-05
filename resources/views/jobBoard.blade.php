@@ -80,6 +80,10 @@
 
                 <p></p>
             </div>
+
+            <div id="found_search_value">
+            
+            </div>
     </section>
 
     {{-- All Available job posts --}}
