@@ -49,6 +49,7 @@
                     id="search_button"
                     class=" p-2 rounded-lg bg-darkBlue text-white font-mono font-medium
                                 tracking-wide hover:bg-lightBlue">
+                                
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                         </svg>
@@ -61,8 +62,6 @@
                     >Error message
                 </p>
             </form>
-         
-           
 
             {{-- If search value equals to none --}}
             <div id="not_found"
@@ -95,32 +94,6 @@
             {{-- Job info container --}}
             <ul>
                 <li class="">
-                    {{-- <div class="flex grow p-2 rounded-md border-2 border-slate-200 md:basis-1/2">
-                        Company logo
-                        <div class="bg-gray-400 rounded-lg">
-                            <p class="p-1">N</p>
-                        </div>
-                        <div class="flex flex-col">
-                            Job Title
-                            <h1 class="pl-3 font-sans text-base font-bold 
-                                tracking-wide text-darkBlue md:text-base">
-                                Software Engineer 
-                            </h1>
-                            <div class="flex pl-3 space-x-1">
-                                Salary
-                                <div class="font-sans text-sm font-semibold 
-                                    tracking-wide text-black/75 md:text-base">
-                                    <h3>$8K</h3>
-                                </div>
-                                Location
-                                <div class="font-sans text-sm font-semibold 
-                                    text-black/50 tracking-wide md:text-base">
-                                    <P>Nairobi, Kenya</P>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-                    {{-- If search value exists --}}
                     <div id="all__jobs__list" class="">
                     
                     </div>
