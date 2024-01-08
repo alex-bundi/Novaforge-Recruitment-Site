@@ -17,6 +17,6 @@ use App\Http\Controllers\JobBoardController;
 
 Route::get('careers', [CareersPagesController::class, 'getIndex'])->name('careers__homepage');
 Route::get('jobboard', [CareersPagesController::class, 'getJobBoard'])->name('available__jobs');
-
 Route::get('jobboard/availablejobs', [JobBoardController::class, 'getAvailableJobs']);
-Route::get('jobboard/viewjob', [JobBoardController::class, 'getViewJob']);
+
+Route::get('jobboard/viewjob/', [CareersPagesController::class, 'getViewJob'])->name('selected__job');

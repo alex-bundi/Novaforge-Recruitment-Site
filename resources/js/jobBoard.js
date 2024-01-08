@@ -23,27 +23,29 @@ class JobBoard {
                         <div class="flex flex-col mb-2 md:flex-row gap-y-2 md:space-x-4">
                             <ul>
                                 <li>
-                                    <div class="flex p-2 rounded-md border-2 border-slate-200 md:basis-2/4">
-                                        
-                                        <div class="flex flex-col">
-                                            <h1 class="pl-3 font-sans text-base font-bold 
-                                                tracking-wide text-darkBlue md:text-base">
-                                                ${job.job_title} 
-                                            </h1>
-                                            <div class="flex pl-3 space-x-1">
-                                                
-                                                <div class="font-sans text-sm font-semibold 
-                                                    tracking-wide text-black md:text-sm">
-                                                    <h3>Ksh ${job.Salary}</h3>
-                                                </div>
-                                                
-                                                <div class="font-sans text-sm font-semibold 
-                                                    text-black/50 tracking-wide md:text-sm">
-                                                    <P>${job.location} </P>
+                                    <a href="http://127.0.0.1:8000/jobboard/viewjob">
+                                        <div class="flex p-2 rounded-md border-2 border-slate-200 hover:bg-slate-200 md:basis-2/4">
+                                            
+                                            <div class="flex flex-col">
+                                                <h1 class="pl-3 font-sans text-base font-bold 
+                                                    tracking-wide text-darkBlue md:text-base">
+                                                    ${job.job_title} 
+                                                </h1>
+                                                <div class="flex pl-3 space-x-1">
+                                                    
+                                                    <div class="font-sans text-sm font-semibold 
+                                                        tracking-wide text-black md:text-sm">
+                                                        <h3>Ksh ${job.Salary}</h3>
+                                                    </div>
+                                                    
+                                                    <div class="font-sans text-sm font-semibold 
+                                                        text-black/50 tracking-wide md:text-sm">
+                                                        <P>${job.location} </P>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
