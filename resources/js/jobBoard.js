@@ -8,7 +8,7 @@ class JobBoard {
     // Get data from JobBoardController and append to an array
     getAvailableJobs (){
         let allJobsHtmlContent = document.getElementById('all__jobs__list');
-
+        this.name = 'alex';
         fetch(this.url)
         .then(async (res) => {
             if(res.ok){
@@ -19,7 +19,7 @@ class JobBoard {
                 jobDetails.forEach((job) => this.jobList.push(job));
 
                 this.jobList.forEach((job) => {
-                    allJobsHtmlContent.innerHTML += `
+                    this.allJobsHtmlContent.innerHTML += `
                         <div class="flex flex-col mb-2 md:flex-row gap-y-2 md:space-x-4">
                             <ul>
                                 <li>
@@ -149,8 +149,17 @@ class JobBoard {
         setTimeout(() => errorMessageElement.remove(), 3000); // Remove warning after 3 secs
     }
 
+    selectedJob () {
+        console.log(this.allJobsHtmlContent);
+    }
+
+
+
+
+
 }
 
 let careersList = new JobBoard();
 careersList.getAvailableJobs();
 careersList.allAvailableJobs();
+careersList.selectedJob();
