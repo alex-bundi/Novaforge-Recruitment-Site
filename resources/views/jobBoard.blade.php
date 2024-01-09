@@ -76,8 +76,14 @@
             </div>
 
             {{-- If search value exists --}}
-            <div id="found_search_value">
-            
+            <div class="flex flex-col md:flex-row gap-y-2 md:space-x-4">
+                <ul>
+                    {{-- Search items --}}
+                    <a href="{{ route('selected__job') }}">
+                        {{-- Specific job --}}
+                        <div id="found_search_value"></div> 
+                    </a>
+                </ul>
             </div>
     </section>
 
