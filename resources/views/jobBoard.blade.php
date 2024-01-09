@@ -95,17 +95,16 @@
                 Available Jobs
             </p>
         </div>
-
         <div class="flex flex-col md:flex-row gap-y-2 md:space-x-4">
-            {{-- Job info container --}}
             <ul>
-                <li class="">
-                    <div id="all__jobs__list" class="">
+                {{-- Search items --}}
+                
+                    {{-- Specific job --}}
+                    <div id="job__info__container">
                     
-                    </div>
-                </li>
+                    </div> 
             </ul>
-
         </div>
+        
     </section>
 @stop
