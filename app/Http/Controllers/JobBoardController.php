@@ -26,5 +26,9 @@ class JobBoardController extends Controller
         return response()->json(['message' => $job_details]);
     }
 
+    public function jobDisplay (Request $request) {
+        $data = $request->collect();
+        return response()->json([$data]);
+    }
     
 }

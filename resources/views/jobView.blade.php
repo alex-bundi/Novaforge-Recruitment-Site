@@ -42,7 +42,7 @@
         </div>
     </div>
     
-
+    <p>{{ $selectedJob }}</p>
 </section>
 
 @stop

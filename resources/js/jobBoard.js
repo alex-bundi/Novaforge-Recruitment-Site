@@ -78,7 +78,7 @@ class JobBoard {
     viewContent (jobTitle, jobSalary, jobLocation) {
         let htmlContent = `
             <li>
-                <a href="http://127.0.0.1:8000/jobboard/viewjob">
+                <a href="http://127.0.0.1:8000/jobboard/viewjob?selected_career=${jobTitle}">
                     <div class="flex p-2 rounded-md border-2 border-slate-200 hover:bg-slate-200 md:basis-2/4">
                                         
                         <div class="flex flex-col">
@@ -118,6 +118,7 @@ class JobBoard {
 
         setTimeout(() => errorMessageElement.remove(), 3000); // Remove warning after 3 secs
     }
+
 
 }
 

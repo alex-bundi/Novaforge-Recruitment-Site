@@ -17,8 +17,14 @@ class CareersPagesController extends Controller
     }
 
     public function getViewJob (Request $request) {
-        // $selectedJob =  JobBoard::find($id);
-        // return view('jobView')->with('selectedJob', $selectedJob);
-        echo($request->collect());
+        // // $selectedJob =  JobBoard::find($id);
+        $selectedJob = $request->collect();
+        return view('jobView')->with('selectedJob', $selectedJob);
+        // echo($request->collect());
+
+
+        // $data = $request->collect();
+        // return response()->json([$data]);
+
     }
 }
