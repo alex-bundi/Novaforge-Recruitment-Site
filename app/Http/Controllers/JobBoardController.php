@@ -32,10 +32,17 @@ class JobBoardController extends Controller
                                                                                 'Salary', 'positions', 'job_reference_code', 'posted_date']);
 
         foreach ( $selectedJob as $values){
-            echo($values->Salary);
+            $selectedCareersDetails = [
+                'job_title'=>$values->job_title, 
+                'job_description'=>$values->job_description, 
+                'location'=>$values->location, 
+                'Salary'=>$values->Salary, 
+                'positions'=>$values->positions, 
+                'job_reference_code'=>$values->job_reference_code, 
+                'posted_date'=>$values->posted_date
+            ];
+            return view('jobView')->with('selectedCareersDetails', $selectedCareersDetails );
         }
-
-
     }
     
 }

@@ -20,7 +20,7 @@
             <h1
             class="m-0 p-4 font-sans text-xl font-bold tracking-widest md:text-2xl"
             >
-                Software Engineer
+                {{ $selectedCareersDetails['job_title']  }}
             </h1>
         </div>
 
@@ -31,17 +31,18 @@
         <div>
             <div class="font-sans text-base font-semibold 
                 tracking-wide text-black md:text-sm">
-                <h3>Ksh 100000</h3>
+                <h3>
+                    Ksh {{ $selectedCareersDetails['Salary']  }} 
+                </h3>
             </div>
             
             <div class="flex justify-center font-sans text-xxs font-semibold 
                 text-black/75 tracking-wide md:text-sm">
-                <P> Nairobi, Kenya </P>
+                <P> {{ $selectedCareersDetails['location']  }}</P>
             </div>
         
         </div>
     </div>
-    
 </section>
 
 @stop
