@@ -27,8 +27,15 @@ class JobBoardController extends Controller
     }
 
     public function jobDisplay (Request $request) {
-        $data = $request->collect();
-        return response()->json([$data]);
+        $data = json_decode($request->collect());
+        $selectedJob =  JobBoard::where('job_title', $data->selected_career)->get(['job_title', 'job_description', 'location', 
+                                                                                'Salary', 'positions', 'job_reference_code', 'posted_date']);
+
+        foreach ( $selectedJob as $values){
+            echo($values->Salary);
+        }
+
+
     }
     
 }
