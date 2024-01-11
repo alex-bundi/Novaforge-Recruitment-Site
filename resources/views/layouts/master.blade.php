@@ -29,6 +29,8 @@
         @yield('body__content')
     </main>
 
-@include('layouts.footer')
+ @if (!isset($excludeFooter) || !$excludeFooter)
+        @include('layouts.footer')
+@endif
 </body>
 </html>

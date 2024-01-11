@@ -1,6 +1,6 @@
 @extends('layouts.master')
 <!-- Page title -->
-@section("page__title", 'Selected Job')
+@section("page__title", 'Selected - ' . $selectedCareersDetails['job_title'])
 <!-- Body of website-->
 @section('body__content')
 
@@ -52,13 +52,54 @@
             Description
         </h1>
     </div>
+    {{-- Job Description --}}
     <div
         class="p-2 font-sans text-sm tracking-widest md:text-base">
         <p>{{ $selectedCareersDetails['job_description']  }}</p>
     </div>
+    {{-- Job Reference Code --}}
+    <div
+        class="flex flex-row">
+        <h3
+            class="font-semibold font-sans text-sm tracking-widest md:text-base">
+            Job Reference Code:
+        </h3>
+        <p
+            class="ml-2 font-normal font-sans text-sm tracking-widest md:text-sm">
+            {{ $selectedCareersDetails['job_reference_code']  }}
+        </p>
+    </div>
+
+    {{-- Posted Date --}}
+    <div
+        class="flex flex-row">
+        <h3
+            class="font-semibold font-sans text-sm tracking-widest md:text-base">
+            Posted Date:
+        </h3>
+        <p
+            class="ml-2 font-normal font-sans text-sm tracking-widest md:text-sm">
+            {{ $selectedCareersDetails['posted_date']  }}
+        </p>
+    </div>
+
+    {{-- Available Positions --}}
+    <div
+        class="flex flex-row">
+        <h3
+            class="font-semibold font-sans text-sm tracking-widest md:text-base">
+            Postions: 
+        </h3>
+        <p
+            class="ml-2 font-normal font-sans text-sm tracking-widest md:text-sm">
+            {{ $selectedCareersDetails['positions']  }}
+        </p>
+    </div>
+
+
      <!-- Application Button -->
     <div class="flex mt-8">
-        <a href=""
+        <a href="{{ route('application__form') }}"
             class="flex justify-center basis-full rounded-lg p-2 bg-darkBlue text-white font-mono font-bold
                 tracking-wide hover:bg-lightBlue md:basis-1/4">
             Apply Now
@@ -67,4 +108,7 @@
 
 </section>
 
-@stop
+@endsection
+@php
+    $excludeFooter = true;
+@endphp 

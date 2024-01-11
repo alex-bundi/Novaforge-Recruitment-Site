@@ -16,4 +16,8 @@ class CareersPagesController extends Controller
         return view('jobBoard');
     }
 
+    public function getJobApplicationForm () {
+        return view('jobApplication');
+    }
+
 }
