@@ -99,21 +99,21 @@
         <div class="tab-container flex m-4 space-x-9 md:space-x-16">
             <div class="tab font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
                         md:text-base" 
-                onclick="openTab('tab1', 'Personal' this)">
+                onclick="openTab('tab1', 'Personal', this)">
                 <h1>Personal</h1>
             </div>
         
             <!-- Experience -->
             <div class="tab font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
                         md:text-base" 
-                onclick="openTab('tab1', 'Personal' this)">
+                onclick="openTab('tab2', 'Experience', this)">
                 <h1>Experience</h1>
             </div>
        
             <!-- Documents -->
             <div class="tab font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
                         md:text-base" 
-                onclick="openTab('tab1', 'Personal' this)">
+                onclick="openTab('tab3', 'Documents', this)">
                 <h1>Documents</h1>
             </div>
             
@@ -123,9 +123,39 @@
 
     </section>
 
+    <!-- Application Forms -->
+    <section>
+        <div id="tab1" class="tab-content active-content">
+            <h1>Personal Information</h1>
+        </div>
+
+        <div id="tab2" class="tab-content hidden">
+            <h1>Work Experience</h1>
+        </div>
+
+        <div id="tab3" class="tab-content hidden">
+            <h1>Documents</h1>
+        </div>
+    </section>
 
 
+<script>
+    function openTab(tabId, tabName, element) {
+        let tabContents = document.getElementsByClassName('tab-content');
+        
+        for (let i=0; i < tabContents.length; i++) {
+            
+            if (!tabContents[i].classList.contains('hidden')) {
+                tabContents[i].classList.add('hidden');
+            }            
+        }
 
+        let selectedTab = document.getElementById(tabId);
+        selectedTab.classList.remove('hidden');
+        element.querySelector('h1').style.color = 'green';
+    }
+
+</script>
 
 @endsection
 @php
