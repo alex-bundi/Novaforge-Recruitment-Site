@@ -91,10 +91,37 @@
             </div>
             
         </div>
-
-    
     </section>
 
+    <!-- Application Tabs -->
+    <section>
+        <!-- Personal Details -->
+        <div class="tab-container flex m-4 space-x-9 md:space-x-16">
+            <div class="tab font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
+                        md:text-base" 
+                onclick="openTab('tab1', 'Personal' this)">
+                <h1>Personal</h1>
+            </div>
+        
+            <!-- Experience -->
+            <div class="tab font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
+                        md:text-base" 
+                onclick="openTab('tab1', 'Personal' this)">
+                <h1>Experience</h1>
+            </div>
+       
+            <!-- Documents -->
+            <div class="tab font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
+                        md:text-base" 
+                onclick="openTab('tab1', 'Personal' this)">
+                <h1>Documents</h1>
+            </div>
+            
+        </div>
+        <hr class="m-4 w-3/4 bg-gray-100 border-0">
+        
+
+    </section>
 
 
 
