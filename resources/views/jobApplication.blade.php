@@ -117,31 +117,165 @@
                 <h1>Documents</h1>
             </div>
             
-        </div>
-        <hr class="m-4 w-3/4 bg-gray-100 border-0">
-        
+        </div>        
 
     </section>
 
     <!-- Application Forms -->
     <section>
-        <div id="tab1" class="tab-content active-content">
-            <h1>Personal Information</h1>
-        </div>
+        <div class="ml-4">
+            <!-- Personal Information -->
+            <div id="tab1" class="tab-content active-content">
+                <form action="">
+                    <div class="flex flex-col md:flex-row md:gap-4 flex-wrap">
+                        {{-- First Name --}}
+                        <div>
+                            <label for="firstname"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 mb-2 md:text-sm">
+                                First Name
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="firstname" 
+                                id="">
+                        </div>
 
-        <div id="tab2" class="tab-content hidden">
-            <h1>Work Experience</h1>
-        </div>
+                        {{-- Second Name --}}
+                        <div>
+                            <label for="secondname" 
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    md:text-sm">
+                                Second Name
+                            </label>
+                            <input type="text" 
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="secondname" id="">
+                        </div>
 
-        <div id="tab3" class="tab-content hidden">
-            <h1>Documents</h1>
+                        {{-- Surname --}}
+                        <div>
+                            <label 
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 mb-2 md:text-sm"
+                                for="surname">
+                                Last Name
+                            </label>
+                            <input type="text" 
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                        text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                        md:w-96"
+                                name="surname" id="">
+                        </div>
+
+                        {{-- Date of Birth --}}
+                        <div >
+                            <label 
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 mb-2 md:text-sm"
+                                for="surname">
+                                Date of Birth
+                            </label>
+                            <input type="date" 
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans font-semibold
+                                        text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                        md:w-96"
+                                name="surname" id="">
+                        </div>
+
+                        
+                        {{-- Mobile --}}
+                        <div>
+                            <label for="mobile"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 mb-2 md:text-sm">
+                                Mobile No
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="mobile" 
+                                id="">
+                        </div>
+
+                        {{-- Email --}}
+                        <div>
+                            <label for="email"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 mb-2 md:text-sm">
+                                Email Address
+                            </label>
+                            <input type="email"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="email" 
+                                id="">
+                        </div>
+
+                        {{-- Address --}}
+                        <div>
+                            <label for="address"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 mb-2 md:text-sm">
+                                Home Address
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="address" 
+                                id="">
+                        </div>
+
+                        {{-- Current Location --}}
+                        <div>
+                            <label for="location"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 mb-2 md:text-sm">
+                               Current Location
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="location" 
+                                id="">
+                        </div>
+
+                    </div>
+
+                    
+                   
+                
+                
+                </form>
+            </div>
+
+            <!-- Work Experience -->
+            <div id="tab2" class="tab-content hidden">
+                <h1>Work Experience</h1>
+            </div>
+
+            <!-- Documents -->
+            <div id="tab3" class="tab-content hidden">
+                <h1>Documents</h1>
+            </div>
+        
         </div>
+        
     </section>
 
 
 <script>
     function openTab(tabId, tabName, element) {
         let tabContents = document.getElementsByClassName('tab-content');
+        
         
         for (let i=0; i < tabContents.length; i++) {
             
