@@ -129,10 +129,10 @@
                 <form action="">
                     <div class="flex flex-col md:flex-row md:gap-4 flex-wrap">
                         {{-- First Name --}}
-                        <div>
+                        <div class="flex flex-col">
                             <label for="firstname"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 mb-2 md:text-sm">
+                                    mr-2 md:text-sm">
                                 First Name
                             </label>
                             <input type="text"
@@ -144,7 +144,7 @@
                         </div>
 
                         {{-- Second Name --}}
-                        <div>
+                        <div class="flex flex-col" >
                             <label for="secondname" 
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
                                     md:text-sm">
@@ -158,7 +158,7 @@
                         </div>
 
                         {{-- Surname --}}
-                        <div>
+                        <div class="flex flex-col" >
                             <label 
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
                                     mr-2 mb-2 md:text-sm"
@@ -173,7 +173,7 @@
                         </div>
 
                         {{-- Date of Birth --}}
-                        <div >
+                        <div class="flex flex-col" >
                             <label 
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
                                     mr-2 mb-2 md:text-sm"
@@ -189,7 +189,7 @@
 
                         
                         {{-- Mobile --}}
-                        <div>
+                        <div class="flex flex-col" >
                             <label for="mobile"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
                                     mr-2 mb-2 md:text-sm">
@@ -204,7 +204,7 @@
                         </div>
 
                         {{-- Email --}}
-                        <div>
+                        <div class="flex flex-col" >
                             <label for="email"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
                                     mr-2 mb-2 md:text-sm">
@@ -219,7 +219,7 @@
                         </div>
 
                         {{-- Address --}}
-                        <div>
+                        <div class="flex flex-col" >
                             <label for="address"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
                                     mr-2 mb-2 md:text-sm">
@@ -234,7 +234,7 @@
                         </div>
 
                         {{-- Current Location --}}
-                        <div>
+                        <div class="flex flex-col" >
                             <label for="location"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
                                     mr-2 mb-2 md:text-sm">
@@ -249,17 +249,87 @@
                         </div>
 
                     </div>
-
-                    
-                   
-                
-                
                 </form>
             </div>
 
             <!-- Work Experience -->
             <div id="tab2" class="tab-content hidden">
-                <h1>Work Experience</h1>
+                <form action="">
+                    <div class="flex flex-col md:flex-row md:gap-4 flex-wrap">
+                        <!-- Job Title -->
+                        <div class="flex flex-col">
+                            <label for="jobtitle"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                Job Title
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="jobtitle" 
+                                id="">
+                        </div>
+
+                        <!-- Company Name -->
+                        <div class="flex flex-col">
+                            <label for="company"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                Company
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="company" 
+                                id="">
+                        </div>
+
+                        <!--Duration -->
+                        <div class="flex flex-col">
+                            <label for="duration"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                Duration
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="duration" 
+                                id="">
+                        </div>
+
+                        <!-- Is current -->
+                        <div class="flex items-center mt-2 mb-2">
+                            <label for="current"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                Current
+                            </label>
+                            <input type="radio"
+                                name="current" 
+                                id="">
+                        </div>
+                    </div>
+                      <!-- Responsibilities -->
+                        <div class="flex flex-col">
+                            <label for="Responsibilities"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                Responsibilities                               
+                            </label>
+                            <textarea name="responsibilities"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                id="" 
+                                cols="30"
+                                rows="10"></textarea>
+
+                        </div>
+                </form>
             </div>
 
             <!-- Documents -->
