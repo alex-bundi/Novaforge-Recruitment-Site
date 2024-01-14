@@ -161,7 +161,7 @@
                         <div class="flex flex-col" >
                             <label 
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 mb-2 md:text-sm"
+                                     md:text-sm"
                                 for="surname">
                                 Last Name
                             </label>
@@ -176,7 +176,7 @@
                         <div class="flex flex-col" >
                             <label 
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 mb-2 md:text-sm"
+                                    md:text-sm"
                                 for="surname">
                                 Date of Birth
                             </label>
@@ -192,7 +192,7 @@
                         <div class="flex flex-col" >
                             <label for="mobile"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 mb-2 md:text-sm">
+                                    md:text-sm">
                                 Mobile No
                             </label>
                             <input type="text"
@@ -207,7 +207,7 @@
                         <div class="flex flex-col" >
                             <label for="email"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 mb-2 md:text-sm">
+                                    md:text-sm">
                                 Email Address
                             </label>
                             <input type="email"
@@ -222,7 +222,7 @@
                         <div class="flex flex-col" >
                             <label for="address"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 mb-2 md:text-sm">
+                                    md:text-sm">
                                 Home Address
                             </label>
                             <input type="text"
@@ -237,7 +237,7 @@
                         <div class="flex flex-col" >
                             <label for="location"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 mb-2 md:text-sm">
+                                    md:text-sm">
                                Current Location
                             </label>
                             <input type="text"
@@ -334,7 +334,107 @@
 
             <!-- Documents -->
             <div id="tab3" class="tab-content hidden">
-                <h1>Documents</h1>
+                <form action="">
+                    <div class="flex flex-col md:flex-row md:gap-4 flex-wrap">
+                        <!-- Schools -->
+                        <div class="flex flex-col">
+                            <label for="schools"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                School(s)
+                            </label>
+                            <select 
+                                name="schools"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96" 
+                                id="">
+                                <option value="">High School</option>
+                                <option value="">College</option>
+                                <option value="">Technical School</option>
+                                <option value="">University</option>
+                            </select>
+                        </div>
+
+                        <!-- School Name -->
+                        <div class="flex flex-col">
+                            <label for="schoolname"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                School Name 
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="schoolname" 
+                                id="">
+                        </div>
+
+                        <!-- School Address -->
+                        <div class="flex flex-col">
+                            <label for="schooladdress"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                School Address
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="schooladdress" 
+                                id="">
+                        </div>
+
+                        {{-- School City --}}
+                         <div class="flex flex-col">
+                            <label for="schoolcity"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                School City
+                            </label>
+                            <input type="text"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="schoolcity" 
+                                id="">
+                        </div>
+
+                        {{-- Number of years --}}
+                        <div class="flex flex-col">
+                            <label for="noofyears"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                Number of years
+                            </label>
+                            <input type="number"
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                name="noofyears" 
+                                id="">
+                        </div>
+                        
+                        {{-- file Upload --}}
+                        <div class="flex flex-col">
+                            <label for="fupload"
+                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                    mr-2 md:text-sm">
+                                Upload file
+                            </label>
+                            <input type="file"
+                                    name="fupload"
+                                    class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                    md:w-96"
+                                    id="user_avatar" >
+
+                        </div>
+
+                    </div>
+                
+                </form>
             </div>
         
         </div>
