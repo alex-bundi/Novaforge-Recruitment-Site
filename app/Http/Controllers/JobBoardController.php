@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class JobBoardController extends Controller
 {
-
+    private $job_details;
     public function getAvailableJobs() {
         $availableJobs =  JobBoard::where('is_available', 1)->get();
-        $job_details = [];
+        $this->job_details = [];
         foreach ($availableJobs as $values){
-            $job_details[] = [
+            $this->job_details[] = [
                 'job_ID' =>  $values->job_ID,
                 'job_title' => $values->job_title,
                 'job_description' => $values->job_description,
@@ -23,7 +23,7 @@ class JobBoardController extends Controller
                 'posted_date' => $values->posted_date
             ];
         }
-        return response()->json(['message' => $job_details]);
+        return response()->json(['message' => $this->job_details]);
     }
 
     public function jobDisplay (Request $request) {
@@ -43,6 +43,12 @@ class JobBoardController extends Controller
             ];
             return view('jobView')->with('selectedCareersDetails', $selectedCareersDetails );
         }
+    }
+
+    public function getJobApplicationForm (Request $request) {
+        $this->getAvailableJobs();
+        print_r($this->job_details);
+        
     }
     
 }

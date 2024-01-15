@@ -21,4 +21,4 @@ Route::get('jobboard', [CareersPagesController::class, 'getJobBoard'])->name('av
 Route::get('jobboard/availablejobs', [JobBoardController::class, 'getAvailableJobs']);
 Route::get('jobboard/viewjob', [JobBoardController::class, 'jobDisplay'])->name('selected__job');
 
-Route::get('jobboard/viewjob/jobapplicationform', [CareersPagesController::class, 'getJobApplicationForm'])->name('application__form');
+Route::get('jobboard/viewjob/jobapplicationform', [JobBoardController::class, 'getJobApplicationForm'])->name('application__form');
