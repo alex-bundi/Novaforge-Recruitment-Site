@@ -23,7 +23,7 @@ class JobBoardController extends Controller
                 'posted_date' => $values->posted_date
             ];
         }
-        return response()->json(['message' => $this->job_details]);
+        return response()->json(['message' => $job_details]);
     }
 
     public function jobDisplay (Request $request) {
@@ -41,14 +41,16 @@ class JobBoardController extends Controller
                 'job_reference_code'=>$values->job_reference_code, 
                 'posted_date'=>$values->posted_date
             ];
+            // Store the selected job data in the session
+            $request->session()->put('selectedCareersDetails', $selectedCareersDetails);
             return view('jobView')->with('selectedCareersDetails', $selectedCareersDetails );
         }
     }
 
     public function getJobApplicationForm (Request $request) {
-        $this->getAvailableJobs();
-        print_r($this->job_details);
-        
+        // Retrieve the selected job data from the session
+        $selectedCareer = $request->session()->get('selectedCareersDetails');
+        return view('jobApplication')->with('selectedCareer', $selectedCareer);
     }
     
 }

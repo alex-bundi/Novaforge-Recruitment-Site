@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 <!-- Page title -->
-@section("page__title", 'Selected Job')
+@section("page__title", 'Apply - ' . $selectedCareer['job_title'])
 
 <!-- Body of website-->
 @section('body__content')
@@ -49,7 +49,7 @@
                     </h2>
                     <p class="font-normal font-sans text-xxs tracking-widest text-black-600/50
                         md:text-sm">
-                        Software Engineer
+                        {{ $selectedCareer['job_title']  }}
                     </p>
                 </div>
 
@@ -61,7 +61,7 @@
                     </h2>
                     <p class="font-normal font-sans text-xxs tracking-widest text-black-600/50
                         md:text-sm">
-                        Ksh 90000
+                        Ksh {{ $selectedCareer['Salary']  }} 
                     </p>
                 </div>
 
@@ -73,7 +73,7 @@
                     </h2>
                     <p class="font-normal font-sans text-xxs tracking-widest text-black-600/50
                         md:text-sm">
-                        2
+                        {{ $selectedCareer['positions']  }} 
                     </p>
                 </div>
 
@@ -85,7 +85,7 @@
                     </h2>
                     <p class="font-normal font-sans text-xxs tracking-widest text-black-600/50
                         md:text-sm">
-                        Nairobi, Kenya
+                        {{ $selectedCareer['location']  }}
                     </p>
                 </div>
             </div>
