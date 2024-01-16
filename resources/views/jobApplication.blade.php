@@ -142,10 +142,9 @@
                                 name="firstname" 
                                 id="fname">
                             <p 
-                                id='error_message'
-                                style="visibility: hidden;"
-                                class="pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide"
-                                >Error message
+                                id='fname_error_message'
+                                class="hidden pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide">
+                                Error message
                             </p>
                         </div>
 
@@ -161,6 +160,11 @@
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
                                 name="secondname" id="sname">
+                            <p 
+                                id='sname_error_message'
+                                class="hidden pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide">
+                                Error message
+                            </p>
                         </div>
 
                         {{-- Surname --}}
@@ -176,6 +180,11 @@
                                         text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                         md:w-96"
                                 name="surname" id="lname">
+                            <p 
+                                id='lname_error_message'
+                                class="hidden pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide">
+                                Error message
+                            </p>
                         </div>
 
                         {{-- Date of Birth --}}
@@ -190,7 +199,12 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans font-semibold
                                         text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                         md:w-96"
-                                name="surname" id="">
+                                name="surname" id="dbirth">
+                            <p 
+                                id='db_error_message'
+                                class="hidden pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide">
+                                Error message
+                            </p>
                         </div>
 
                         
@@ -199,7 +213,7 @@
                             <label for="mobile"
                                 class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
                                     md:text-sm">
-                                Mobile No
+                                Mobile No (Optional)
                             </label>
                             <input type="text"
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
@@ -221,7 +235,12 @@
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
                                 name="email" 
-                                id="">
+                                id="emAddress">
+                            <p 
+                                id='em_error_message'
+                                class="hidden pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide">
+                                Error message
+                            </p>
                         </div>
 
                         {{-- Address --}}
