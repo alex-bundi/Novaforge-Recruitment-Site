@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class JobBoardController extends Controller
 {
-    private $job_details;
+   
     public function getAvailableJobs() {
         $availableJobs =  JobBoard::where('is_available', 1)->get();
-        $this->job_details = [];
+        $job_details = [];
         foreach ($availableJobs as $values){
-            $this->job_details[] = [
+            $job_details[] = [
                 'job_ID' =>  $values->job_ID,
                 'job_title' => $values->job_title,
                 'job_description' => $values->job_description,

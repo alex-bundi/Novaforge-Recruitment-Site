@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@vite('resources/js/jobApplication.js')
 <!-- Page title -->
 @section("page__title", 'Apply - ' . $selectedCareer['job_title'])
 
@@ -126,7 +126,7 @@
         <div class="ml-4">
             <!-- Personal Information -->
             <div id="tab1" class="tab-content active-content">
-                <form action="">
+                <form action="" id="personal__info">
                     <div class="flex flex-col md:flex-row md:gap-4 flex-wrap">
                         {{-- First Name --}}
                         <div class="flex flex-col">
@@ -140,7 +140,13 @@
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
                                 name="firstname" 
-                                id="">
+                                id="fname">
+                            <p 
+                                id='error_message'
+                                style="visibility: hidden;"
+                                class="pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide"
+                                >Error message
+                            </p>
                         </div>
 
                         {{-- Second Name --}}
@@ -154,7 +160,7 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
-                                name="secondname" id="">
+                                name="secondname" id="sname">
                         </div>
 
                         {{-- Surname --}}
@@ -169,7 +175,7 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                         text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                         md:w-96"
-                                name="surname" id="">
+                                name="surname" id="lname">
                         </div>
 
                         {{-- Date of Birth --}}
@@ -247,7 +253,15 @@
                                 name="location" 
                                 id="">
                         </div>
-
+                    </div>
+                    <div class="flex mt-4">
+                        <input type="button"
+                            class="basis-1/2 rounded-lg p-2 bg-darkBlue text-white font-mono font-bold
+                                tracking-wide hover:bg-lightBlue md:basis-1/4"
+                            value="Next"
+                            name="" 
+                            id="next"
+                            onclick="openTab('tab2', 'Experience', this)">
                     </div>
                 </form>
             </div>
@@ -456,7 +470,7 @@
 
         let selectedTab = document.getElementById(tabId);
         selectedTab.classList.remove('hidden');
-        element.querySelector('h1').style.color = 'green';
+        // element.querySelector('h1').style.color = 'green';
     }
 
 </script>
