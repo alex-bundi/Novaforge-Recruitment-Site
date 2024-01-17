@@ -404,7 +404,9 @@
 
             <!-- Documents -->
             <div id="tab3" class="tab-content hidden">
-                <form action="">
+                <form action="POST" id="applicant__details">
+                    @csrf
+                    @method('PUT')
                     <div class="flex flex-col md:flex-row md:gap-4 flex-wrap">
                         <!-- Schools -->
                         <div class="flex flex-col">
@@ -418,7 +420,7 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96" 
-                                id="">
+                                id="school_type">
                                 <option value="">High School</option>
                                 <option value="">College</option>
                                 <option value="">Technical School</option>
@@ -437,8 +439,8 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
-                                name="schoolname" 
-                                id="">
+                                name="" 
+                                id="schoolname">
                         </div>
 
                         <!-- School Address -->
@@ -452,8 +454,8 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
-                                name="schooladdress" 
-                                id="">
+                                name="" 
+                                id="schooladdress">
                         </div>
 
                         {{-- School City --}}
@@ -467,8 +469,8 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
-                                name="schoolcity" 
-                                id="">
+                                name="" 
+                                id="schoolcity">
                         </div>
 
                         {{-- Number of years --}}
@@ -483,7 +485,7 @@
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
                                 name="noofyears" 
-                                id="">
+                                id="noofyears">
                         </div>
                         
                         {{-- file Upload --}}
@@ -498,12 +500,19 @@
                                     class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
-                                    id="user_avatar" >
+                                    id="cv_file" >
 
                         </div>
-
                     </div>
-                
+
+                    <div class="flex mt-4">
+                        <input type="submit"
+                            class="basis-1/2 rounded-lg p-2 bg-darkBlue text-white font-mono font-bold
+                                tracking-wide hover:bg-lightBlue md:basis-1/4"
+                            value="Submit"
+                            name="" 
+                            id="next-tab3">
+                    </div>
                 </form>
             </div>
         

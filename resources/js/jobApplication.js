@@ -71,6 +71,7 @@ class JobApplication {
                 this.currentJob = 1
             }
 
+            let emptyValues = false;
             let applicantsJobExperience = {
                 'jobTitle': jobTitle,
                 'company':company,
@@ -78,10 +79,53 @@ class JobApplication {
                 'isCurrent':this.currentJob,
                 'reponsibilities':reponsibilities
             }
+
+            for (let [key, value] of Object.entries(applicantsJobExperience).slice(0,1)) {
+                if (value === '') {
+                    emptyValues = true;
+                    return emptyValues;
+                }
+           }
             this.userApplicationData.push(applicantsJobExperience);
+
+        })
+    }
+
+    getDocumentation () {
+        const submitApplication = document.getElementById('applicant__details');
+
+        submitApplication.addEventListener('submit', (event) => {
+            event.preventDefault();
+            let schoolType = document.getElementById('school_type');
+            let schoolValue = schoolType.options[schoolType.selectedIndex].text; // Get value of dropdown
+            let schoolName = document.getElementById('schoolname').value.trim();
+            let schoolAddress = document.getElementById('schooladdress').value.trim();
+            let schoolCity = document.getElementById('schoolcity').value.trim();
+            let noYears = document.getElementById('noofyears').value.trim();
+
+            let cvFile = document.getElementById('cv_file').files[0];
+            let emptyValues = false;
+            if (!cvFile) {
+                emptyValues = true;
+                return emptyValues;
+            }else{
+                const lastModifiedDate = new Date(cvFile.lastModified).toLocaleString();
+                this.uploadedFile = `${lastModifiedDate}_${cvFile.name}_${cvFile.type}`
+                
+            }
+
+            let applicantDocs = {
+                'schoolType':schoolValue,
+                'schoolName':schoolName,
+                'schoolAddress':schoolAddress,
+                'schoolCity':schoolCity,
+                'noYears':noYears,
+                'uploadedFile':this.uploadedFile
+            }
+            this.userApplicationData.push(applicantDocs);
             console.log(this.userApplicationData);
             
-            
+
         })
     }
 
@@ -103,3 +147,4 @@ class JobApplication {
 let jobApp = new JobApplication();
 jobApp.getPersonalDetails();
 jobApp.getExperienceDetails();
+jobApp.getDocumentation();
