@@ -160,11 +160,6 @@
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
                                 name="secondname" id="sname">
-                            <p 
-                                id='sname_error_message'
-                                class="hidden pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide">
-                                Error message
-                            </p>
                         </div>
 
                         {{-- Surname --}}
@@ -196,7 +191,7 @@
                                 Date of Birth
                             </label>
                             <input type="date" 
-                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans font-semibold
+                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans font-normal
                                         text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                         md:w-96"
                                 name="surname" id="dbirth">
@@ -220,7 +215,7 @@
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
                                 name="mobile" 
-                                id="">
+                                id="phoneno">
                         </div>
 
                         {{-- Email --}}
@@ -300,8 +295,8 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
-                                name="jobtitle" 
-                                id="">
+                                name="" 
+                                id="jobtitle">
                         </div>
 
                         <!-- Company Name -->
@@ -315,8 +310,8 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
-                                name="company" 
-                                id="">
+                                name="" 
+                                id="company">
                         </div>
 
                         <!--Duration -->
@@ -330,8 +325,8 @@
                                 class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
                                     text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
                                     md:w-96"
-                                name="duration" 
-                                id="">
+                                name="" 
+                                id="duration">
                         </div>
 
                         <!-- Is current -->
@@ -342,8 +337,8 @@
                                 Current
                             </label>
                             <input type="radio"
-                                name="current" 
-                                id="">
+                                name="" 
+                                id="iscurrent">
                         </div>
                     </div>
                       <!-- Responsibilities -->
@@ -362,6 +357,15 @@
                                 rows="10"></textarea>
 
                         </div>
+                        <div class="flex mt-4">
+                        <input type="button"
+                            class="basis-1/2 rounded-lg p-2 bg-darkBlue text-white font-mono font-bold
+                                tracking-wide hover:bg-lightBlue md:basis-1/4"
+                            value="Next"
+                            name="" 
+                            id="next-tab3"
+                            onclick="openTab('tab3', 'Documents', this)">
+                    </div>
                 </form>
             </div>
 
