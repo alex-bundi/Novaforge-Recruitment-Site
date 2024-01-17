@@ -3,6 +3,7 @@ class JobApplication {
         this.userApplicationData = [];
     }
 
+    // Gets the data inserted from the personal information tab
     getPersonalDetails () {
         let nextTabBtn = document.getElementById('next');
 
@@ -47,7 +48,6 @@ class JobApplication {
            }
            if (emptyValues == false) {
                 this.userApplicationData.push(personalInfo);
-                console.log(this.userApplicationData);   
            }
            
             
@@ -63,11 +63,25 @@ class JobApplication {
             let company = document.getElementById('company').value.trim();
             let duration = document.getElementById('duration').value.trim();
             let isCurrent = document.getElementById('iscurrent');
+            let reponsibilities = document.getElementById('roles').value.trim();
+            this.currentJob = 0;
+
+
             if (isCurrent.checked){
-                console.log('hello');
+                this.currentJob = 1
             }
 
-            // console.log(current);
+            let applicantsJobExperience = {
+                'jobTitle': jobTitle,
+                'company':company,
+                'duration':duration,
+                'isCurrent':this.currentJob,
+                'reponsibilities':reponsibilities
+            }
+            this.userApplicationData.push(applicantsJobExperience);
+            console.log(this.userApplicationData);
+            
+            
         })
     }
 

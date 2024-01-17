@@ -282,91 +282,124 @@
 
             <!-- Work Experience -->
             <div id="tab2" class="tab-content hidden">
-                <form action="">
-                    <div class="flex flex-col md:flex-row md:gap-4 flex-wrap">
-                        <!-- Job Title -->
-                        <div class="flex flex-col">
-                            <label for="jobtitle"
-                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 md:text-sm">
-                                Job Title
-                            </label>
-                            <input type="text"
-                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
-                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
-                                    md:w-96"
-                                name="" 
-                                id="jobtitle">
+                <!-- Form Opener -->
+                <div class="flex">
+                    <div class="flex basis-1/2 flex-row gap-x-48">
+                        <div>
+                            <h1 class="font-normal font-sans text-xxs tracking-widest text-black-600/50
+                                md:text-sm">
+                                Experience
+                            </h1>
                         </div>
-
-                        <!-- Company Name -->
-                        <div class="flex flex-col">
-                            <label for="company"
-                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 md:text-sm">
-                                Company
-                            </label>
-                            <input type="text"
-                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
-                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
-                                    md:w-96"
+                        <div>
+                            <input type="button"
+                                class="p-1 rounded-lg bg-darkBlue text-xxs text-white font-mono font-bold
+                                    tracking-wide hover:bg-lightBlue"
+                                value="Add"
                                 name="" 
-                                id="company">
+                                id=""
+                                onclick="displayForm()">
+                            
                         </div>
-
-                        <!--Duration -->
-                        <div class="flex flex-col">
-                            <label for="duration"
-                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 md:text-sm">
-                                Duration
-                            </label>
-                            <input type="text"
-                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
-                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
-                                    md:w-96"
-                                name="" 
-                                id="duration">
-                        </div>
-
-                        <!-- Is current -->
-                        <div class="flex items-center mt-2 mb-2">
-                            <label for="current"
-                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 md:text-sm">
-                                Current
-                            </label>
-                            <input type="radio"
-                                name="" 
-                                id="iscurrent">
-                        </div>
+                        
                     </div>
-                      <!-- Responsibilities -->
-                        <div class="flex flex-col">
-                            <label for="Responsibilities"
-                                class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
-                                    mr-2 md:text-sm">
-                                Responsibilities                               
-                            </label>
-                            <textarea name="responsibilities"
-                                class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
-                                    text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
-                                    md:w-96"
-                                id="" 
-                                cols="30"
-                                rows="10"></textarea>
+                       
+                </div>
 
+                <div class="hidden" id="addexperience">
+                    <form action="">
+                        <div class="flex flex-col md:flex-row md:gap-4 flex-wrap">
+                            <!-- Job Title -->
+                            <div class="flex flex-col">
+                                <label for="jobtitle"
+                                    class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                        mr-2 md:text-sm">
+                                    Job Title
+                                </label>
+                                <input type="text"
+                                    class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                        text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                        md:w-96"
+                                    name="" 
+                                    id="jobtitle">
+                                <p 
+                                    id='em_error_message'
+                                    class="hidden pl-2 m-0 font-mono font-semibold text-xxs  tracking-wide">
+                                    Error message
+                                </p>
+                            </div>
+
+                            <!-- Company Name -->
+                            <div class="flex flex-col">
+                                <label for="company"
+                                    class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                        mr-2 md:text-sm">
+                                    Company
+                                </label>
+                                <input type="text"
+                                    class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                        text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                        md:w-96"
+                                    name="" 
+                                    id="company">
+                            </div>
+
+                            <!--Duration -->
+                            <div class="flex flex-col">
+                                <label for="duration"
+                                    class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                        mr-2 md:text-sm">
+                                    Duration
+                                </label>
+                                <input type="text"
+                                    class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                        text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                        md:w-96"
+                                    name="" 
+                                    id="duration">
+                            </div>
+
+                            <!-- Is current -->
+                            <div class="flex items-center mt-2 mb-2">
+                                <label for="current"
+                                    class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                        mr-2 md:text-sm">
+                                    Current
+                                </label>
+                                <input type="radio"
+                                    name="" 
+                                    id="iscurrent">
+                            </div>
                         </div>
-                        <div class="flex mt-4">
-                        <input type="button"
-                            class="basis-1/2 rounded-lg p-2 bg-darkBlue text-white font-mono font-bold
-                                tracking-wide hover:bg-lightBlue md:basis-1/4"
-                            value="Next"
-                            name="" 
-                            id="next-tab3"
-                            onclick="openTab('tab3', 'Documents', this)">
-                    </div>
-                </form>
+                        <!-- Responsibilities -->
+                            <div class="flex flex-col">
+                                <label for="Responsibilities"
+                                    class="font-semibold font-sans text-xxs tracking-widest text-black-600/50
+                                        mr-2 md:text-sm">
+                                    Responsibilities                               
+                                </label>
+                                <textarea name="responsibilities"
+                                    class="bg-gray-100 border-2 border-gray-200 rounded-md w-64 py-1.5 px-2 font-sans 
+                                        text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500
+                                        md:w-96"
+                                    id="roles" 
+                                    cols="30"
+                                    rows="10"></textarea>
+
+                            </div>
+                            <div class="flex mt-4">
+                            <input type="button"
+                                class="basis-1/2 rounded-lg p-2 bg-darkBlue text-white font-mono font-bold
+                                    tracking-wide hover:bg-lightBlue md:basis-1/4"
+                                value="Next"
+                                name="" 
+                                id="next-tab3"
+                                onclick="openTab('tab3', 'Documents', this)">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
             </div>
 
             <!-- Documents -->
@@ -494,6 +527,11 @@
         let selectedTab = document.getElementById(tabId);
         selectedTab.classList.remove('hidden');
         // element.querySelector('h1').style.color = 'green';
+    }
+
+    function displayForm() {
+        let expForm = document.getElementById('addexperience');
+        expForm.classList.remove('hidden'); 
     }
 
 </script>
