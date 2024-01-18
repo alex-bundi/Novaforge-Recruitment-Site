@@ -410,9 +410,8 @@
                     class="hidden pl-2 m-0 font-mono font-semibold text-lg  tracking-wide">
                     Error message
                 </p>
-                <form action="POST" id="applicant__details">
+                <form action="{{ route('application__submitted') }}" id="applicant__details" method="POST">
                     @csrf
-                    @method('PUT')
                     <div class="flex flex-col md:flex-row md:gap-4 flex-wrap">
                         <!-- Schools -->
                         <div class="flex flex-col">

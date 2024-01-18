@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class JobBoardController extends Controller
 {
-   
+
+
     public function getAvailableJobs() {
         $availableJobs =  JobBoard::where('is_available', 1)->get();
         $job_details = [];
@@ -54,9 +55,20 @@ class JobBoardController extends Controller
     }
 
     public function postUserApplication (Request $request){
-        $data = $request->all();
-        return response()->json(['message' => $data]);
+        $userData = $request->input('userData');
+        session(['application_data' => $userData]);
 
+        return response()->json(['success']);
+
+    }
+
+    public function getSuccess (array $data){
+       return $userData;
+    }
+
+    public function showProcessedData() {
+        $processedData = session('application_data');
+        dd($processedData);
     }
     
 }
