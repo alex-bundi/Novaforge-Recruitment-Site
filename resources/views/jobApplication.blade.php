@@ -98,7 +98,8 @@
         <!-- Personal Details -->
         <div class="tab-container flex m-4 space-x-9 md:space-x-16">
             <div class="tab font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
-                        md:text-base" 
+                        md:text-base"
+                id="personal__info__tab"
                 onclick="openTab('tab1', 'Personal', this)">
                 <h1>Personal</h1>
             </div>
@@ -404,6 +405,11 @@
 
             <!-- Documents -->
             <div id="tab3" class="tab-content hidden">
+                <p 
+                    id='empty-values'
+                    class="hidden pl-2 m-0 font-mono font-semibold text-lg  tracking-wide">
+                    Error message
+                </p>
                 <form action="POST" id="applicant__details">
                     @csrf
                     @method('PUT')
@@ -548,4 +554,6 @@
 @endsection
 @php
     $excludeFooter = true;
-@endphp 
+@endphp
+
+

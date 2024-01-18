@@ -52,5 +52,9 @@ class JobBoardController extends Controller
         $selectedCareer = $request->session()->get('selectedCareersDetails');
         return view('jobApplication')->with('selectedCareer', $selectedCareer);
     }
+
+    public function postUserApplication (Request $request){
+        dd($request->all());
+    }
     
 }

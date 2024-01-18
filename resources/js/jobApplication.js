@@ -79,7 +79,6 @@ class JobApplication {
                 'isCurrent':this.currentJob,
                 'reponsibilities':reponsibilities
             }
-
             for (let [key, value] of Object.entries(applicantsJobExperience).slice(0,1)) {
                 if (value === '') {
                     emptyValues = true;
@@ -98,6 +97,7 @@ class JobApplication {
             event.preventDefault();
             let schoolType = document.getElementById('school_type');
             let schoolValue = schoolType.options[schoolType.selectedIndex].text; // Get value of dropdown
+
             let schoolName = document.getElementById('schoolname').value.trim();
             let schoolAddress = document.getElementById('schooladdress').value.trim();
             let schoolCity = document.getElementById('schoolcity').value.trim();
@@ -117,23 +117,55 @@ class JobApplication {
             let applicantDocs = {
                 'schoolType':schoolValue,
                 'schoolName':schoolName,
+                'uploadedFile':this.uploadedFile,
                 'schoolAddress':schoolAddress,
                 'schoolCity':schoolCity,
-                'noYears':noYears,
-                'uploadedFile':this.uploadedFile
+                'noYears':noYears
             }
-            this.userApplicationData.push(applicantDocs);
-            console.log(this.userApplicationData);
+
+            for (let [key, value] of Object.entries(applicantDocs).slice(0,3)) {
+                if (value === '') {
+                    emptyValues = true;
+                    let emptyFieldError = document.getElementById('empty-values');
+                    emptyFieldError.classList.remove('hidden');
+                    emptyFieldError.textContent = 'Some mandatory fields have empty values';
+                    emptyFieldError.style.color = "red";
+                    return emptyValues;
+                }
+            }
+            if (emptyValues == false) {
+                this.userApplicationData.push(applicantDocs);
+                let token = document.querySelector('input[name=_token').value;
+                // console.log(this.userApplicationData);
+                let url = 'http://127.0.0.1:8000/jobboard/viewjob/jobapplicationform/applicationdata';
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-Token': token
+                    },
+                    body: JSON.stringify({
+                        'userData': this.userApplicationData
+                    })
+                })
+                .then(function(res){
+                    console.log(res.text())
+                })
+                
+            
+            
+            }
             
 
         })
     }
 
+
     // To display input error messages
     error (message, fieldId){
         this.message = message;
         this.fieldId = fieldId;  // The Second parameter solves the edge case of when their is no input at all in the most fields
-
 
         let errorMessageElement = document.getElementById(this.fieldId);
         errorMessageElement.classList.remove('hidden');
@@ -148,3 +180,4 @@ let jobApp = new JobApplication();
 jobApp.getPersonalDetails();
 jobApp.getExperienceDetails();
 jobApp.getDocumentation();
+// jobApp.postUserApplication();

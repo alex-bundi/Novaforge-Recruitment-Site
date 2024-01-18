@@ -22,3 +22,4 @@ Route::get('jobboard/availablejobs', [JobBoardController::class, 'getAvailableJo
 Route::get('jobboard/viewjob', [JobBoardController::class, 'jobDisplay'])->name('selected__job');
 
 Route::get('jobboard/viewjob/jobapplicationform', [JobBoardController::class, 'getJobApplicationForm'])->name('application__form');
+Route::post('jobboard/viewjob/jobapplicationform/applicationdata', [JobBoardController::class, 'postUserApplication']);
