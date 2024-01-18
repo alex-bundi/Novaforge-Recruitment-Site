@@ -54,7 +54,9 @@ class JobBoardController extends Controller
     }
 
     public function postUserApplication (Request $request){
-        dd($request->all());
+        $data = $request->all();
+        return response()->json(['message' => $data]);
+
     }
     
 }
