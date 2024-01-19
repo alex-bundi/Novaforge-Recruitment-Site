@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use App\Models\JobBoard;
 use Illuminate\Http\Request;
-// use App\Models\
+use App\Models\PersonalInfo;
+use App\Models\ApplicantInfo;
 
 class JobBoardController extends Controller
 {
@@ -66,6 +68,27 @@ class JobBoardController extends Controller
     public function showProcessedData() {
         $processedData = session('application_data');
         // dd($processedData[0]["firstName"]);
+
+        $rules = [
+            $processedData[0]["firstName"] => 'bail|required|string',
+            $processedData[0]["lastName"] => 'required|string',
+            $processedData[0]["dateBirth"] => 'required|string',
+            $processedData[0]["email"] => 'required|email|unique:App\Models\PersonalInfo,email',
+            $processedData[0]["secondName"] => 'string',
+            $processedData[0]["phoneNo"] => 'string',
+            $processedData[1]["jobTitle"] => 'required|string',
+            $processedData[1]["company"] => 'required|string',
+            $processedData[1]["duration"] => 'integer',
+            $processedData[1]["isCurrent"] => 'integer',
+            $processedData[1]["reponsibilities"] => 'string',
+            $processedData[2]["schoolType"] => 'required|string',
+            $processedData[2]["schoolName"] => 'required|string',
+            $processedData[2]["uploadedFile"] => 'required|string',
+            $processedData[2]["schoolAddress"] => 'string',
+            $processedData[2]["schoolCity"] => 'string',
+            $processedData[2]["noYears"] => 'integer',
+        ];
+
     }
     
 }

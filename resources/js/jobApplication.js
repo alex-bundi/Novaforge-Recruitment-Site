@@ -61,7 +61,7 @@ class JobApplication {
             event.preventDefault();
             let jobTitle = document.getElementById('jobtitle').value.trim();
             let company = document.getElementById('company').value.trim();
-            let duration = document.getElementById('duration').value.trim();
+            let duration = Number(document.getElementById('duration').value.trim());
             let isCurrent = document.getElementById('iscurrent');
             let reponsibilities = document.getElementById('roles').value.trim();
             this.currentJob = 0;
@@ -101,7 +101,7 @@ class JobApplication {
             let schoolName = document.getElementById('schoolname').value.trim();
             let schoolAddress = document.getElementById('schooladdress').value.trim();
             let schoolCity = document.getElementById('schoolcity').value.trim();
-            let noYears = document.getElementById('noofyears').value.trim();
+            let noYears = Number(document.getElementById('noofyears').value.trim());
 
             let cvFile = document.getElementById('cv_file').files[0];
             let emptyValues = false;
