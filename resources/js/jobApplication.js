@@ -107,6 +107,7 @@ class JobApplication {
 
             let cvFile = document.getElementById('cv_file').files[0];
             let emptyValues = false;
+               
             if (!cvFile) {
                 emptyValues = true;
                 return emptyValues;
@@ -115,7 +116,7 @@ class JobApplication {
                 this.uploadedFile = `${lastModifiedDate}_${cvFile.name}_${cvFile.type}`
                 
             }
-
+ 
             let applicantDocs = {
                 'schoolType':schoolValue,
                 'schoolName':schoolName,
@@ -158,7 +159,6 @@ class JobApplication {
             }
         })
     }
-
 
     // To display input error messages
     error (message, fieldId){

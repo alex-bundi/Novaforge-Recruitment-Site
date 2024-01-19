@@ -567,5 +567,3 @@
 @php
     $excludeFooter = true;
 @endphp
-
-

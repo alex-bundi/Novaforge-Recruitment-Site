@@ -67,7 +67,6 @@ class JobBoardController extends Controller
 
     public function showProcessedData() {
         $processedData = session('application_data');
-        // dd($processedData[0]["firstName"]);
 
         $rules = [
             $processedData[0]["firstName"] => 'bail|required|string',
@@ -89,12 +88,9 @@ class JobBoardController extends Controller
             $processedData[2]["noYears"] => 'integer',
         ];
 
-        $validator = Validator::make($data, $rules);
-        if ($validator->fails()) {
-            $errors = $validator->errors();
-        } else {
-            // Validation passed, continue with your logic
-        }
+        $validator = Validator::make($processedData, $rules);
+        dd($validator->validated());
+
 
     }
     
