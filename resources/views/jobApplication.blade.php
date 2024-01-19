@@ -96,6 +96,19 @@
     <!-- Application Tabs -->
     <section>
         <!-- Personal Details -->
+        <div>
+            @if ($errors->any())
+                <div class="alert alert-danger font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
+                        md:text-base">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        
+        </div>
         <div class="tab-container flex m-4 space-x-9 md:space-x-16">
             <div class="tab font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
                         md:text-base"

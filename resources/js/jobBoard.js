@@ -10,8 +10,6 @@ class JobBoard {
         .then(async (res) => {
             if (res.ok) {
                 requestsCount++;
-                console.log(`All requests sent = ${requestsCount}`);
-
                 let jobsData = await res.json();
                 let jobDetails = Object.values(jobsData.message);
 

@@ -54,6 +54,7 @@ class JobApplication {
         } )        
     }
 
+    // Gets the data inserted from the experience tab
     getExperienceDetails () {
         let nextTabBtn = document.getElementById('next-tab3');
 
@@ -90,6 +91,7 @@ class JobApplication {
         })
     }
 
+    // Get data from the documents tab and send data from all the tabs
     getDocumentation () {
         const submitApplication = document.getElementById('applicant__details');
 
@@ -136,7 +138,6 @@ class JobApplication {
             if (emptyValues == false) {
                 this.userApplicationData.push(applicantDocs);
                 let token = document.querySelector('input[name=_token').value;
-                // console.log(this.userApplicationData);
                 let url = 'http://127.0.0.1:8000/jobboard/viewjob/jobapplicationform/applicationdata';
                 fetch(url, {
                     method: 'POST',
@@ -154,12 +155,7 @@ class JobApplication {
                         window.location.href = 'http://127.0.0.1:8000/jobboard/viewjob/applicationsuccess';
                     }
                 })
-                
-            
-            
             }
-            
-
         })
     }
 

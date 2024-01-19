@@ -89,6 +89,13 @@ class JobBoardController extends Controller
             $processedData[2]["noYears"] => 'integer',
         ];
 
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+        } else {
+            // Validation passed, continue with your logic
+        }
+
     }
     
 }
