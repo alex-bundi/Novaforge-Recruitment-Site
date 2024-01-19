@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\JobBoard;
 use Illuminate\Http\Request;
+// use App\Models\
 
 class JobBoardController extends Controller
 {
@@ -62,13 +63,9 @@ class JobBoardController extends Controller
 
     }
 
-    public function getSuccess (array $data){
-       return $userData;
-    }
-
     public function showProcessedData() {
         $processedData = session('application_data');
-        dd($processedData);
+        // dd($processedData[0]["firstName"]);
     }
     
 }

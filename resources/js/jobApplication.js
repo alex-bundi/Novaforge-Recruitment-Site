@@ -150,8 +150,6 @@ class JobApplication {
                     })
                 })
                 .then(function(res){
-                
-                    console.log(res.status)
                     if (res.status == 200) {
                         window.location.href = 'http://127.0.0.1:8000/jobboard/viewjob/applicationsuccess';
                     }
