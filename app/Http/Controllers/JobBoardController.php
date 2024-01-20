@@ -80,12 +80,12 @@ class JobBoardController extends Controller
             $processedData[1]["duration"] => 'integer',
             $processedData[1]["isCurrent"] => 'integer',
             $processedData[1]["reponsibilities"] => 'string',
-            $processedData[2]["schoolType"] => 'required|string',
-            $processedData[2]["schoolName"] => 'required|string',
-            $processedData[2]["uploadedFile"] => 'required|string',
-            $processedData[2]["schoolAddress"] => 'string',
-            $processedData[2]["schoolCity"] => 'string',
-            $processedData[2]["noYears"] => 'integer',
+            // $processedData[2]["schoolType"] => 'required|string',
+            // $processedData[2]["schoolName"] => 'required|string',
+            // $processedData[2]["uploadedFile"] => 'required|string',
+            // $processedData[2]["schoolAddress"] => 'string',
+            // $processedData[2]["schoolCity"] => 'string',
+            // $processedData[2]["noYears"] => 'integer',
         ];
 
         $validator = Validator::make($processedData, $rules);
