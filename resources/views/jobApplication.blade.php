@@ -98,7 +98,7 @@
         <!-- Personal Details -->
         <div>
             @if ($errors->any())
-                <div class="alert alert-danger font-mono text-sm font-semibold tracking-wide text-black/75 active:text-green-500	
+                <div class="alert alert-danger font-mono text-sm font-semibold tracking-wide text-red-300 active:text-green-500	
                         md:text-base">
                     <ul>
                         @foreach ($errors->all() as $error)
