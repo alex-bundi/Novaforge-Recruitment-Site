@@ -89,7 +89,11 @@ class JobBoardController extends Controller
         ];
 
         $validator = Validator::make($processedData, $rules);
-        dd($validator->validated());
+        $personalInfoData = $validator->validated()[0];
+        $combinedData = array_merge($validator->validated()[1], $validator->validated()[2]);
+
+        $pInfo = PersonalInfo::create($personalInfoData);
+        $oInfo = ApplicantInfo::create($combinedData);
 
 
     }
