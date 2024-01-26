@@ -178,4 +178,3 @@ let jobApp = new JobApplication();
 jobApp.getPersonalDetails();
 jobApp.getExperienceDetails();
 jobApp.getDocumentation();
-// jobApp.postUserApplication();
